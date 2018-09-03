@@ -11,10 +11,10 @@ app.post('/test', (req, res) => {
     let payload = req.body;
     res.sendStatus(200);
 
-    console.log(payload);
+    
 
     if (payload.event.type === "app_mention") {
-        
+        console.log(payload);
         fetch('https://slack.com/api/chat.postMessage', {
             method: 'POST',
             headers: {
