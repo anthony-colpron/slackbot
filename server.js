@@ -14,7 +14,8 @@ app.post('/test', (req, res) => {
     
 
     if (payload.event.type === "app_mention") {
-        console.log('RECEIVED EVENT: ' + payload);
+        console.log('RECEIVED EVENT:');
+        console.log(payload);
         fetch('https://slack.com/api/chat.postMessage', {
             method: 'POST',
             headers: {
@@ -27,7 +28,8 @@ app.post('/test', (req, res) => {
         .then(response => {
          let parsedBody = JSON.parse(response);
 
-        console.log('RECEIVED RESPONSE' + parsedBody);
+        console.log('RECEIVED RESPONSE:');
+        console.log(parsedBody);
 
         })
 
