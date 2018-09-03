@@ -11,7 +11,7 @@ app.post('/test', (req, res) => {
     let payload = req.body;
     res.sendStatus(200);
 
-    console.log(payload.event.item.channel);
+    console.log(payload);
 
     if (payload.event.type === "app_mention") {
         
@@ -25,9 +25,9 @@ app.post('/test', (req, res) => {
         })
         .then(response => response.text())
         .then(response => {
-            let parsedBody = JSON.parse(response);
+           // let parsedBody = JSON.parse(response);
 
-            console.log(parsedBody);
+         //   console.log(parsedBody);
 
         })
 
