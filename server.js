@@ -11,6 +11,8 @@ app.post('/test', (req, res) => {
     let payload = req.body;
     res.sendStatus(200);
 
+    console.log(payload.event.item.channel);
+
     if (payload.event.type === "app_mention") {
         
         fetch('https://slack.com/api/chat.postMessage', {
@@ -21,8 +23,12 @@ app.post('/test', (req, res) => {
             },
             body: JSON.stringify({text: 'Hello!', channel: 'test'})
         })
+        .then(response => response.text())
         .then(response => {
-            console.log(response);
+            let parsedBody = JSON.parse(response);
+
+            console.log(parsedBody);
+
         })
 
     }
