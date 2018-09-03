@@ -19,7 +19,7 @@ app.post('/test', (req, res) => {
                 'Content-type': 'application/json',
                 'Authorization': 'Bearer xoxb-426320088134-428368238130-mOzBKQmAasWgqE022eziMfcO',
             },
-            body: JSON.stringify({text: 'Hello!', channel: payload.event.item.channel})
+            body: JSON.stringify({text: 'Hello!', channel: 'test'})
         })
         .then(response => {
             console.log(response);
